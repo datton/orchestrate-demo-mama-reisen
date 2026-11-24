@@ -24,7 +24,7 @@
 .gd-card:nth-child(3) { border-top-color: var(--sun); }
 .gd-card h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
 .gd-card p { margin: 0 0 .75rem; }
-.gd-asof { display: inline-block; padding: .1rem .6rem; border-radius: var(--radius-pill); background: var(--accent-soft); color: var(--accent-strong); font-size: var(--fs-xs); font-weight: 700; white-space: nowrap; }
+.gd-asof { display: inline-block; max-width: 100%; padding: .1rem .6rem; border-radius: var(--radius-pill); background: var(--accent-soft); color: var(--accent-strong); font-size: var(--fs-xs); font-weight: 700; white-space: normal; }
 .gd-source { margin-top: 2rem; font-size: var(--fs-sm); max-width: 65ch; color: var(--text-muted); }
 .gd-checks { list-style: none; padding: 0; margin: 1.5rem 0; display: grid; gap: .6rem; max-width: 40rem; }
 .gd-checks label { display: flex; gap: .85rem; align-items: flex-start; padding: .85rem 1rem; background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius-sm); cursor: pointer; transition: border-color .2s, background .2s; }
@@ -47,4 +47,6 @@
 @media (max-width: 40rem) { .gd-actions .gd-btn { width: 100%; text-align: center; } .gd-steps li { padding: 1.25rem; } }
 @media (prefers-reduced-motion: reduce) { .gd-chips a, .gd-btn, .gd-reset, .gd-checks label { transition: none; } }
 /* Small phones: long words and list items must never push the page sideways (bug 16398) */
+main li, main h2, main h3, main p, main dd, main dt { overflow-wrap: anywhere; }
+/* Small phones: long words and list items must never push the page sideways */
 main li, main h2, main h3, main p, main dd, main dt { overflow-wrap: anywhere; }
