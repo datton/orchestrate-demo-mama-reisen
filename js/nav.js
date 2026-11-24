@@ -45,7 +45,7 @@
     body.insertBefore(header, prog.nextSibling);
 
     var footer = document.createElement('footer');
-    
+    footer.className = 'site-footer';
     footer.innerHTML =
       '<div class="site-footer__inner">' +
       '<div class="site-footer__brand"><strong>Mama Travel</strong><p>Eine erfundene Reiseagentur für Reisen nach Ghana. Agentur, Pakete und Preise sind fiktiv.</p></div>' +
