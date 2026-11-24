@@ -51,7 +51,7 @@
     if (!(n >= 1) || n > 12) { tot.textContent = '–'; ul.innerHTML = '<li>Bitte 1 bis 12 Personen eingeben.</li>'; return; }
     var p = byId(sel.value), rows = [], sum = 0;
     if (p) { rows.push([p.name + ' (' + n + ' x ' + Shop.money(p.price) + ')', p.price * n]); }
-    [].slice.call(ef.querySelectorAll('input[name=x]:checked')).forEach(function (c) { var s = byId(c.value); if (s) rows.push([s.name, s.price]); });
+    [].slice.call(ef.querySelectorAll('input[name=x]:checked')).forEach(function (c) { var s = byId(c.value); if (s) rows.push(s.perPerson ? [s.name + ' (' + n + ' x ' + Shop.money(s.price) + ')', s.price * n] : [s.name, s.price]); });
     rows.forEach(function (r) { sum += r[1]; });
     tot.textContent = Shop.money(sum);
     ul.innerHTML = rows.map(function (r) { return '<li><span>' + esc(r[0]) + '</span><span>' + esc(Shop.money(r[1])) + '</span></li>'; }).join('');
