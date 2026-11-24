@@ -1,0 +1,291 @@
+{
+ "brand": {
+  "name": "Mama Travel",
+  "short": "Mama Travel",
+  "kind": "services",
+  "tagline": "Fiktive Demo-Agentur: mit Mama Travel gut vorbereitet nach Ghana"
+ },
+ "currency": "EUR",
+ "timezone": "Africa/Accra",
+ "demo": true,
+ "stores": [],
+ "categories": [
+  {
+   "id": "packages",
+   "name": "Pakete",
+   "blurb": "Für deine erste Ghana-Reise: alles Wichtige in einem Paket"
+  },
+  {
+   "id": "services",
+   "name": "Services",
+   "blurb": "Einzeln buchbar: Transfer, Reiseplan und Dokumenten-Check"
+  },
+  {
+   "id": "guides",
+   "name": "Ratgeber",
+   "blurb": "Zum Nachlesen, freigeschaltet unter Meine Käufe"
+  }
+ ],
+ "options": {
+  "zimmer": {
+   "name": "Zimmer",
+   "type": "one",
+   "required": true,
+   "choices": [
+    {
+     "id": "doppel",
+     "name": "Doppelzimmer, geteilt",
+     "price": 0,
+     "default": true
+    },
+    {
+     "id": "einzel",
+     "name": "Einzelzimmer",
+     "price": 9000
+    }
+   ]
+  },
+  "gaeste_transfer": {
+   "name": "Gäste",
+   "type": "one",
+   "required": true,
+   "choices": [
+    {
+     "id": "1-2",
+     "name": "1 bis 2 Personen",
+     "price": 0,
+     "default": true
+    },
+    {
+     "id": "3-4",
+     "name": "3 bis 4 Personen",
+     "price": 1500
+    }
+   ]
+  },
+  "richtung": {
+   "name": "Fahrt",
+   "type": "one",
+   "required": true,
+   "choices": [
+    {
+     "id": "einfach",
+     "name": "Einfache Fahrt",
+     "price": 0,
+     "default": true
+    },
+    {
+     "id": "hin-zurueck",
+     "name": "Hin und zurück",
+     "price": 4000
+    }
+   ]
+  },
+  "tempo": {
+   "name": "Bearbeitung",
+   "type": "one",
+   "required": true,
+   "choices": [
+    {
+     "id": "standard",
+     "name": "Standard: Antwort in 3 Werktagen",
+     "price": 0,
+     "default": true
+    },
+    {
+     "id": "express",
+     "name": "Express: Antwort in 1 Werktag",
+     "price": 1500
+    }
+   ]
+  }
+ },
+ "items": [
+  {
+   "id": "erste-reise",
+   "name": "Erste Reise",
+   "category": "packages",
+   "price": 42000,
+   "options": [
+    "zimmer"
+   ],
+   "desc": "Das Paket für alle, die zum ersten Mal nach Ghana reisen: sieben Nächte, Abholung am Flughafen und ein schriftlicher Reiseplan. Preis pro Person. Fiktives Demo-Angebot.",
+   "includes": [
+    "7 Nächte Unterkunft",
+    "Abholung am Flughafen Accra",
+    "Reiseplan als Text zum Speichern",
+    "Vorbereitungs-Checkliste"
+   ],
+   "tags": [
+    "popular"
+   ],
+   "soldOut": false,
+   "badge": "Beliebt",
+   "perPerson": true
+  },
+  {
+   "id": "freunde-familie",
+   "name": "Freunde und Familie",
+   "category": "packages",
+   "price": 36000,
+   "options": [
+    "zimmer"
+   ],
+   "desc": "Für Gruppen ab zwei Personen: sieben Nächte, ein gemeinsamer Transfer und ein Reiseplan, den ihr zusammen anpassen könnt. Preis pro Person. Fiktives Demo-Angebot.",
+   "includes": [
+    "7 Nächte Unterkunft",
+    "Gemeinsamer Transfer vom Flughafen",
+    "Reiseplan für die Gruppe",
+    "Vorbereitungs-Checkliste"
+   ],
+   "tags": [],
+   "soldOut": false,
+   "perPerson": true
+  },
+  {
+   "id": "entspannt-reisen",
+   "name": "Entspannt reisen",
+   "category": "packages",
+   "price": 49000,
+   "options": [
+    "zimmer"
+   ],
+   "desc": "Zehn Nächte mit Ruhe zwischen den Stationen: Unterkunft, Transfer und ein Reiseplan mit viel Luft. Preis pro Person. Fiktives Demo-Angebot.",
+   "includes": [
+    "10 Nächte Unterkunft",
+    "Abholung am Flughafen Accra",
+    "Reiseplan mit freien Tagen",
+    "Vorbereitungs-Checkliste"
+   ],
+   "tags": [],
+   "soldOut": false,
+   "perPerson": true
+  },
+  {
+   "id": "flughafentransfer",
+   "name": "Flughafentransfer Accra",
+   "category": "services",
+   "price": 4500,
+   "options": [
+    "gaeste_transfer",
+    "richtung"
+   ],
+   "desc": "Eine Fahrerin oder ein Fahrer holt dich am Flughafen Accra ab und bringt dich zur Unterkunft. Fiktives Demo-Angebot.",
+   "includes": [
+    "Abholung am Flughafen",
+    "Fahrt zur Unterkunft",
+    "Name auf dem Schild"
+   ],
+   "tags": [],
+   "soldOut": false
+  },
+  {
+   "id": "reiseplan-hilfe",
+   "name": "Reiseplan-Hilfe",
+   "category": "services",
+   "price": 3500,
+   "options": [
+    "tempo"
+   ],
+   "desc": "Du schickst uns deine Wünsche, wir schreiben dir einen Reiseplan zum Speichern. Fiktives Demo-Angebot.",
+   "includes": [
+    "Reiseplan als Text",
+    "Eine Runde Änderungen"
+   ],
+   "tags": [],
+   "soldOut": false
+  },
+  {
+   "id": "dokumenten-check",
+   "name": "Dokumenten-Check",
+   "category": "services",
+   "price": 4500,
+   "options": [
+    "tempo"
+   ],
+   "desc": "Wir schauen mit dir durch, welche Unterlagen du für deine Reise zusammenstellen solltest, und verweisen auf die offiziellen Stellen. Wir versprechen kein Ergebnis bei Behörden. Preis pro Person. Fiktives Demo-Angebot.",
+   "includes": [
+    "Checkliste zu deinen Unterlagen",
+    "Verweise auf offizielle Stellen"
+   ],
+   "tags": [],
+   "soldOut": false,
+   "perPerson": true
+  },
+  {
+   "id": "einreise-visum",
+   "name": "Ratgeber: Einreise und Visum",
+   "category": "guides",
+   "price": 1400,
+   "options": [],
+   "desc": "Was du vor der Einreise nach Ghana klären solltest, mit Verweisen auf die offiziellen Stellen. Wird unter Meine Käufe freigeschaltet.",
+   "includes": [
+    "Überblick zu Einreise und Visum",
+    "Verweise auf offizielle Stellen",
+    "Freigeschaltet unter Meine Käufe"
+   ],
+   "tags": [],
+   "soldOut": false,
+   "guide": "pages/guides/einreise-visum.html"
+  },
+  {
+   "id": "anreise-ankunft",
+   "name": "Ratgeber: Anreise und Ankunft",
+   "category": "guides",
+   "price": 1200,
+   "options": [],
+   "desc": "Wie Anreise und Ankunft in Accra ablaufen können. Wird unter Meine Käufe freigeschaltet.",
+   "includes": [
+    "Überblick zur Anreise",
+    "Hinweise zur Ankunft",
+    "Freigeschaltet unter Meine Käufe"
+   ],
+   "tags": [],
+   "soldOut": false,
+   "guide": "pages/guides/anreise-ankunft.html"
+  },
+  {
+   "id": "reisezeit-packen",
+   "name": "Ratgeber: Reisezeit und Packen",
+   "category": "guides",
+   "price": 1200,
+   "options": [],
+   "desc": "Wann du reisen kannst und was in den Koffer gehört. Wird unter Meine Käufe freigeschaltet.",
+   "includes": [
+    "Überblick zur Reisezeit",
+    "Packliste",
+    "Freigeschaltet unter Meine Käufe"
+   ],
+   "tags": [],
+   "soldOut": false,
+   "guide": "pages/guides/reisezeit-packen.html"
+  },
+  {
+   "id": "gesundheit-sicherheit",
+   "name": "Ratgeber: Gesundheit und Sicherheit",
+   "category": "guides",
+   "price": 1400,
+   "options": [],
+   "desc": "Allgemeine Hinweise zu Gesundheit und Sicherheit auf Reisen, mit Verweisen auf offizielle Hinweise. Wird unter Meine Käufe freigeschaltet.",
+   "includes": [
+    "Allgemeine Hinweise",
+    "Verweise auf offizielle Stellen",
+    "Freigeschaltet unter Meine Käufe"
+   ],
+   "tags": [],
+   "soldOut": false,
+   "guide": "pages/guides/gesundheit-sicherheit.html"
+  }
+ ],
+ "coupons": [
+  {
+   "code": "MAMA10",
+   "name": "10 % auf deinen ersten Einkauf",
+   "type": "percent",
+   "value": 10,
+   "appliesTo": "order",
+   "maxDiscount": 9000,
+   "firstOrderOnly": true
+  }
+ ]
+}
