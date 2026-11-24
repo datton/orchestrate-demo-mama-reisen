@@ -1,0 +1,14 @@
+/* Packliste (senior7). Tokens only. */
+.pk-list { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr)); }
+.pk-group { border: 2px solid var(--line); border-radius: var(--radius); padding: 1rem 1.25rem 1.25rem; margin: 0; background: var(--surface); min-width: 0; }
+.pk-group legend { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; padding: 0 .5rem; color: var(--accent-strong); }
+.pk-group ul { list-style: none; margin: 0; padding: 0; }
+.pk-group label { display: flex; gap: .8rem; align-items: flex-start; padding: .6rem 0; cursor: pointer; overflow-wrap: anywhere; }
+.pk-group input { flex: none; width: 1.4rem; height: 1.4rem; margin-top: .1rem; accent-color: var(--accent); }
+.pk-group input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.pk-group input:checked + span { color: var(--text-muted); text-decoration: line-through; }
+.pk-bar { margin-top: 1.5rem; max-width: 40rem; }
+.pk-track { height: .75rem; border-radius: var(--radius-pill); background: var(--accent-soft); overflow: hidden; }
+.pk-fill { height: 100%; width: 0; background: var(--accent); border-radius: inherit; transition: width .4s cubic-bezier(.2,.7,.2,1); }
+@media (prefers-reduced-motion: reduce) { .pk-fill { transition: none; } }
+main li, main h2, main h3, main p, main dd, main dt { overflow-wrap: anywhere; }
