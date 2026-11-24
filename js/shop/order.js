@@ -46,7 +46,7 @@
       h += '<h1 class="ord__title">Danke' + (o.firstName ? ', ' + esc(o.firstName) : '') + '! Deine Zahlung ist angekommen.</h1>' +
         '<div class="ord__number"><small>Bestellnummer</small><strong>' + esc(o.number) + '</strong></div><br>';
     }
-    h += '<span class="ord__test">' + esc((Shop.TEST_LABEL || 'Demo: nur Testzahlungen, es bewegt sich kein echtes Geld.')) + '</span>';
+    h += '<span class="ord__test">' + esc((Shop.TEST_LABEL || 'Demo-Shop: nur Testzahlungen, es bewegt sich kein echtes Geld.')) + '</span>';
     if (ok) {
       var steps = (o.steps || []).map(function (s) { return '<li class="' + (s.at ? 'is-done' : '') + '">' + esc(STEP[s.id] || s.label) + (s.at ? ' &#10003;' : '') + '</li>'; }).join('');
       h += '<section class="ord__card" aria-labelledby="ord-b"><h2 id="ord-b">Was du gebucht hast</h2><ul class="ord__lines">' +
@@ -77,7 +77,7 @@
 
   function fail(msg) {
     root.innerHTML = '<p class="ord__eyebrow">Bestätigung <span class="ord__badge">Demo</span></p><h1 class="ord__title">Diese Bestellung finden wir nicht</h1><div class="ord__error" role="alert">' + esc(msg) + '</div>' +
-      '<span class="ord__test">' + esc((Shop.TEST_LABEL || 'Demo: nur Testzahlungen, es bewegt sich kein echtes Geld.')) + '</span><div class="ord__actions"><button class="ord__btn" type="button" id="ord-retry">Nochmal versuchen</button><a class="ord__btn ord__btn--ghost" href="account.html">Meine Käufe</a><a class="ord__btn ord__btn--ghost" href="services.html">Angebote</a></div>';
+      '<span class="ord__test">' + esc((Shop.TEST_LABEL || 'Demo-Shop: nur Testzahlungen, es bewegt sich kein echtes Geld.')) + '</span><div class="ord__actions"><button class="ord__btn" type="button" id="ord-retry">Nochmal versuchen</button><a class="ord__btn ord__btn--ghost" href="account.html">Meine Käufe</a><a class="ord__btn ord__btn--ghost" href="services.html">Angebote</a></div>';
     var rt = document.getElementById('ord-retry');
     if (rt) rt.addEventListener('click', function () { tries = 0; poll(); });
   }
