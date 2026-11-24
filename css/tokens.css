@@ -1,0 +1,89 @@
+/* tokens.css — Designer. The look for the Mama Reisen: warm, rich, playful but trustworthy; lagoon teal with raspberry and sunflower.
+   Palette: deep lagoon-night neutrals on warm blush-cream paper, ONE accent: lagoon teal (#0a6f72, 6:1 on white) + vivid supporting colours (sunflower, raspberry, leaf, plum).
+   Type: system fonts only; a bold display scale with clamp() and tight tracking on large type.
+   Motion: one easing, 400-900 ms, 60 ms stagger. Animate only transform, opacity, filter. */
+:root {
+  /* palette */
+  --bg: #fff7f1;
+  --surface: #ffffff;
+  --surface-2: #ffe9dc;
+  --text: #0b2a30;            /* 15:1 on --bg */
+  --text-muted: #4c5f64;      /* 6.6:1 on --bg */
+  --line: #efd9c9;
+  --dark: #071d22;            /* lagoon-night band */
+  --dark-2: #0f3a42;
+  --on-dark: #fff4ea;         /* 14:1 on --dark */
+  --on-dark-muted: #b5d0d3;   /* 7.6:1 on --dark */
+  --accent: #0a6f72;
+  --accent-strong: #07525a;
+  --accent-soft: #d7f0ee;
+  --accent-on-dark: #6fe0d8;  /* 7:1 on --dark */
+  --on-accent: #ffffff;
+  /* bright supporting colours: fills, chips, big type, calendar days. Use the -ink versions for small text on light. */
+  --sun: #ffc21a; --sun-ink: #6e4a00;
+  --ocean: #12b5a6; --ocean-ink: #0a6158;
+  --palm: #d6246e; --palm-ink: #a8154f;   /* raspberry (name kept) */
+  --violet: #8a3fd1; --violet-ink: #6322a6;   /* plum (name kept) */
+  --success: #1c6b4a;
+  --danger: #b00020;
+  --focus: #0b4fd1;
+  --focus-on-dark: #ffd24a;
+
+  /* type */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --fs-xs: .8125rem;
+  --fs-sm: .9375rem;
+  --fs-base: 1.0625rem;
+  --fs-lg: clamp(1.2rem, 1rem + .8vw, 1.5rem);
+  --fs-step: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem);   /* scrollytelling step text */
+  --fs-h2: clamp(2rem, 1.2rem + 3.6vw, 4.25rem);
+  --fs-h1: clamp(2.75rem, 1.4rem + 6vw, 7rem);
+  --fs-giant: clamp(5rem, 2rem + 16vw, 16rem);        /* marquee / changing word */
+  --lh-tight: 1.02;
+  --lh-snug: 1.2;
+  --lh-body: 1.6;
+  --track-display: -.035em;
+  --track-h2: -.025em;
+  --measure: 65ch;
+
+  /* spacing, radius, shadow */
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 4.5rem;
+  --section: clamp(5rem, 12vw, 10rem);
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --radius-sm: .75rem; --radius: 1.25rem; --radius-lg: 2rem; --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(11, 42, 48, .06), 0 2px 8px rgba(11, 42, 48, .05);
+  --shadow: 0 6px 24px rgba(11, 42, 48, .08), 0 2px 6px rgba(11, 42, 48, .05);
+  --shadow-lg: 0 24px 60px rgba(11, 42, 48, .16);
+  --glow: radial-gradient(60% 60% at 50% 40%, rgba(10, 111, 114, .22), transparent 70%);
+  --gradient-text: linear-gradient(100deg, #0a6f72 0%, #d6246e 60%, #c2570a 100%);
+  --gradient-text-dark: linear-gradient(100deg, #6fe0d8 0%, #ffd24a 50%, #ff8fb8 100%);
+
+  /* motion */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --dur-fast: 400ms;
+  --dur: 650ms;
+  --dur-slow: 900ms;
+  --stagger: 60ms;
+  --rise: 1.25rem;            /* reveal travel distance */
+  --blur-in: 6px;             /* reveal start blur */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur: 0ms; --dur-slow: 0ms; --stagger: 0ms; --rise: 0; --blur-in: 0; }
+}
+
+/* CSS-only accents */
+.text-gradient {
+  background: var(--gradient-text);
+  background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+.band--dark .text-gradient { background-image: var(--gradient-text-dark); }
+.glow { background-image: var(--glow); }
+
+/* Keyboard focus stays visible on dark surfaces. */
+.band--dark, .site-footer { --focus: var(--focus-on-dark); }
